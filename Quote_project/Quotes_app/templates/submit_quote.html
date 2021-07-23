@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Add in your own quote</h1>
+
+<form action= "/Quotes_app/submit_quote/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="Author">Author:</label>
+    <input type="text" id="Author" name="Author"><br><br>
+    <label for="Quote">Quote:</label>
+    <input type="text" id="Quote" name="Quote"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<p>Click the "Submit" button to add your quote.</p>
+
+</body>
+</html>

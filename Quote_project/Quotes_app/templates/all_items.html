@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <title>All Quotes</title>
+</head>
+
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+
+<body>
+    <h2>Quotes Table</h2>
+
+    <table>
+        <tr><td colspan="4">All Quotes</td></tr>
+        {% for a, q in Items %}
+            <tr>
+                <td>{{a}}</td>
+                <td>{{q}}</td>
+            </tr>
+
+        {% endfor %}</table>
+
+</body>
+</html>
