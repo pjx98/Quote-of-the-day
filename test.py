@@ -25,3 +25,36 @@ DynamoDB Stream Output:
               'id': {'S': 'bab7d7598f2a47b6ba91b1f46e58787f'}
               }, 
  'SequenceNumber': '414400000000020984432489', 'SizeBytes': 93, 'StreamViewType': 'NEW_IMAGE'}
+
+
+SQS output:
+    
+{
+   "Records":[
+      {
+         "messageId":"19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
+         "receiptHandle":"MessageReceiptHandle",
+         "body":"Hello from SQS!",
+         "attributes":{
+            "ApproximateReceiveCount":"1",
+            "SentTimestamp":"1523232000000",
+            "SenderId":"123456789012",
+            "ApproximateFirstReceiveTimestamp":"1523232000001"
+         },
+         "messageAttributes":{
+            "Author":{
+               "StringValue":"test_Author",
+               "DataType":"String"
+            },
+            "Quote":{
+               "StringValue":"test_Quote",
+               "DataType":"String"
+            }
+         },
+         "md5OfBody":"{{{md5_of_body}}}",
+         "eventSource":"aws:sqs",
+         "eventSourceARN":"arn:aws:sqs:ap-southeast-1:996122235934:quotes_queue",
+         "awsRegion":"ap-southeast-1"
+      }
+   ]
+}
