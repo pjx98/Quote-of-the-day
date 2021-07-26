@@ -14,13 +14,15 @@ def lambda_handler(event, context):
     message_attributes = event['Records'][0]
     author = message_attributes["messageAttributes"]["Author"]["stringValue"]
     quote = message_attributes["messageAttributes"]["Quote"]["stringValue"]
-
+    
+    # add quote to 'Quotes' table
     context = {}
     context['Author'] = author
     context['Quote'] = quote
     insert_quotes(count_file.count, context, 'Quotes')
     count_file.count += 1
     
+    # delete msg after it has been consumed
     client = boto3.client('sqs')
     response = client.delete_message(
         QueueUrl='https://sqs.ap-southeast-1.amazonaws.com/996122235934/quotes_queue',

@@ -32,26 +32,39 @@ SQS output:
 {
    "Records":[
       {
-         "messageId":"19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
-         "receiptHandle":"MessageReceiptHandle",
-         "body":"Hello from SQS!",
+         "messageId":"64dd96f8-79d8-49d3-a8f7-933a3c92fb3a",
+         "receiptHandle":"AQEBEfDIpKG0gVCZJecqRnvy8Ukbg0DK3QOjZKiLvKQSXXeM60bhGC3zNznohEccYcA7+dWCYQBf4VWHRwjF8N80uCzTPFuq6PrPitg+cLM06Uf+PW1qIFWSa1FCSEV+nlUjB2xTaS883XRkTPHsdC/FgwDEXABUpo4nPeWyP/yIqlSebFqUb/dD3l1K6Ap6q8tIUqlKEp89woL7uH5HDWdLyCu3LDD1trtYaPXOpKQgEg6V1rRtg7XOSwsykLobsqJTbKZfh9cuhj0d7XaEkU7GXEIiua5kvTWqx+vHScgm1noDCkSWHudOZbr+IiFGh7bEYI0bpZXPY0+YU2NyNQX9ugiboTgbPtgP9fm2p5fthSEUnkXNOhcnRs39QhSaczSYFRrKyqfcCrpLey9w8rioVw==",
+         "body":"new quote",
          "attributes":{
-            "ApproximateReceiveCount":"1",
-            "SentTimestamp":"1523232000000",
-            "SenderId":"123456789012",
-            "ApproximateFirstReceiveTimestamp":"1523232000001"
+            "ApproximateReceiveCount":"10",
+            "SentTimestamp":"1627134001394",
+            "SenderId":"AIDA6P3MDCQPDRLYZWZ6Z",
+            "ApproximateFirstReceiveTimestamp":"1627134001394"
          },
          "messageAttributes":{
-            "Author":{
-               "StringValue":"test_Author",
-               "DataType":"String"
-            },
             "Quote":{
-               "StringValue":"test_Quote",
-               "DataType":"String"
+               "stringValue":"e5ue5u",
+               "stringListValues":[
+                  
+               ],
+               "binaryListValues":[
+                  
+               ],
+               "dataType":"String"
+            },
+            "Author":{
+               "stringValue":"e5ye5y",
+               "stringListValues":[
+                  
+               ],
+               "binaryListValues":[
+                  
+               ],
+               "dataType":"String"
             }
          },
-         "md5OfBody":"{{{md5_of_body}}}",
+         "md5OfBody":"cf915fe1915a522edea1e8ee4c144b2e",
+         "md5OfMessageAttributes":"4513b5d732f6a001659c757ee03a959f",
          "eventSource":"aws:sqs",
          "eventSourceARN":"arn:aws:sqs:ap-southeast-1:996122235934:quotes_queue",
          "awsRegion":"ap-southeast-1"
