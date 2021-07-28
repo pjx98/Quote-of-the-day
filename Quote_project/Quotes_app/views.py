@@ -23,7 +23,6 @@ def today_quote(request):
 
 def show_all_items(request):
     
-
     dynamodb_client = boto3.client('dynamodb')
     response = dynamodb_client.scan(
         TableName='Quotes',

@@ -1,19 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
 <!DOCTYPE html>
 <html>
+<style>
+input[type=text], select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 <body>
+  <h2 style="padding-left:16px">Suscribe</h2>
+  <p style="padding-left:16px">The quote-of-the-day will be sent to your email everyday at 8am (GMT +8)</p>
 
-<h1>Add your email </h1>
-
-<p>We will send you a new quote everyday at 8am (GMT +8)</p>
-
-
-<form action= "/Quotes_app/email/" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <label for="Email">Email:</label>
-    <input type="text" id="Email" name="Email"><br><br>
-    <input type="submit" value="Submit">
-</form>
-
+<div style="padding-left:16px">
+  <form action= "{% url 'subscribe' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="Email">Email</label> <br>
+      <input type="text" id="Email" placeholder="Email.." name="Email"><br><br>
+      <input type="submit" value="Submit">
+  </form>
+</div>
 
 </body>
 </html>
+{% endblock content %}

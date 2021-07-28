@@ -1,19 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
 <!DOCTYPE html>
 <html>
+<style>
+input[type=text], select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 <body>
+<h2 style="padding-left:16px">Add in your own quote</h2>
+<div style="padding-left:16px">
+    <form action= "{% url 'add_quote' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
-<h1>Add in your own quote</h1>
+        <label for="Author">Author</label> <br>
+        <input type="text" id="Author" placeholder="Author.." name="Author"><br><br>
 
-<form action= "/Quotes_app/submit_quote/" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <label for="Author">Author:</label>
-    <input type="text" id="Author" name="Author"><br><br>
-    <label for="Quote">Quote:</label>
-    <input type="text" id="Quote" name="Quote"><br><br>
-    <input type="submit" value="Submit">
-</form>
 
-<p>Click the "Submit" button to add your quote.</p>
+        <label for="Quote">Quote</label> <br>
+        <input type="text" id="Quote" placeholder="Quote.." name="Quote"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+
+</div>
 
 </body>
 </html>
+{% endblock content %}
