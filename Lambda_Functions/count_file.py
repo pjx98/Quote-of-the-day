@@ -14,5 +14,3 @@ def get_number_of_items(dynamodb=None):
 
 
 count = get_number_of_items()
-
-# need to change value and deploy everytime to reset count
